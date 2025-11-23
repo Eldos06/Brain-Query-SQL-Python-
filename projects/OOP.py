@@ -106,6 +106,14 @@ class Cloze(Card, Rating):
         and returns interval for next repetition"""
         return self.rating.next_interval(grade)
 
+## to use User class
+yeldos2 = User(1, 'Yeldos', '240116042@sdu.edu.kz')
+azizbek = User(2, 'Azizbek', '240116021@sdu.edu.kz')
+
+deckYeldos2 = Deck(1, 'English', [] )
+deckAzizbek = Deck(2, 'Math', [] )
+
+
 
 
 
