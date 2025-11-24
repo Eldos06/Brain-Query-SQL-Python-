@@ -2,9 +2,41 @@ from abc import ABC, abstractmethod
 
 class User:
     def __init__(self, user_id: int, name: str, email: str):
-        self.user_id = id
-        self.name = name
-        self.email = email
+        self.__user_id = user_id
+        self.__name = name
+        self.__email = email
+
+#properties(decorator)
+    @property
+    def user_id(self):
+        return self.__user_id
+    
+    @user_id.setter
+    def user_id(self,id):
+        if isinstance(id, int):
+            self.__user_id = id
+
+
+    @property
+    def name(self):
+        return self.__name
+    
+    @name.setter
+    def email(self,name):
+        if isinstance(name,str):
+            self.__name = name
+
+    
+    @property
+    def email(self):
+        return self.__email
+    
+    @email.setter
+    def email(self,new_email):
+        if "@" in new_email:
+            self.__email = new_email
+
+
 
 class Deck:
     def __init__(self, deck_id: int, title: str, cards: list | None = None):
