@@ -72,7 +72,7 @@ class App(ctk.CTk):
                 fg_color="transparent",
                 hover_color="#2A2A2A",
                 text_color=PURPLE,
-                font=("Roboto", 14, "normal"),
+                font=("Roboto", 16, "normal"),
                 command=command
             )
             # This pack layout correctly distributes buttons horizontally within the 'nav' frame
@@ -104,6 +104,6 @@ class App(ctk.CTk):
         bar.grid(row=2, column=1, sticky="ew", padx=5, pady=5)
 
 # This part ensures the script runs when executed
-if __name__ == "__main__":
+if __name__ == "__main__": #running app
     app = App()
     app.mainloop()
