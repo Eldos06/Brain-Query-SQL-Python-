@@ -1,0 +1,331 @@
+NSERT INTO tblSUBJECT (SubjectName, SubjectDescr) VALUES
+('Mathematics', 'Study of numbers, quantity, and space'),
+('Physics', 'Science of matter, energy, and their interactions'),
+('Chemistry', 'Study of substances and their properties'),
+('Biology', 'Science of living organisms'),
+('History', 'Study of past events'),
+('Geography', 'Study of Earth and its features'),
+('Literature', 'Study of written works'),
+('Computer Science', 'Study of computation and information'),
+('Psychology', 'Study of mind and behavior'),
+('Economics', 'Study of production and consumption'),
+('Philosophy', 'Study of fundamental questions'),
+('Art', 'Creative and visual expression'),
+('Music', 'Study of sound and composition'),
+('Engineering', 'Application of science to design'),
+('Medicine', 'Science of health and disease'),
+('Law', 'System of rules and regulations'),
+('Sociology', 'Study of society and social behavior'),
+('Astronomy', 'Study of celestial objects'),
+('Linguistics', 'Study of language'),
+('Political Science', 'Study of government and politics');
+
+
+INSERT INTO tblOWNER (OwnerFname, OwnerLname, OwnerDescr) VALUES
+('John', 'Smith', 'High school teacher'),
+('Emma', 'Johnson', 'University professor'),
+('Michael', 'Williams', 'Online educator'),
+('Sophia', 'Brown', 'Subject matter expert'),
+('James', 'Jones', 'Curriculum developer'),
+('Olivia', 'Garcia', 'Educational content creator'),
+('William', 'Martinez', 'Private tutor'),
+('Ava', 'Rodriguez', 'Academic coordinator'),
+('Alexander', 'Wilson', 'Department head'),
+('Isabella', 'Anderson', 'Learning specialist'),
+('Daniel', 'Thomas', 'Education consultant'),
+('Mia', 'Taylor', 'Course instructor'),
+('Matthew', 'Moore', 'Teaching assistant'),
+('Charlotte', 'Jackson', 'Educational researcher'),
+('David', 'Martin', 'Training manager'),
+('Amelia', 'Lee', 'E-learning developer'),
+('Joseph', 'Perez', 'Study guide author'),
+('Harper', 'White', 'Academic advisor'),
+('Andrew', 'Harris', 'Education specialist'),
+('Evelyn', 'Clark', 'Content strategist');
+
+
+INSERT INTO tblSTUDENT (StudentFname, StudentLname, BirthDate, email) VALUES
+('Alice', 'Cooper', '2005-03-15', 'alice.cooper@email.com'),
+('Bob', 'Dylan', '2006-07-22', 'bob.dylan@email.com'),
+('Carol', 'King', '2005-11-08', 'carol.king@email.com'),
+('David', 'Bowie', '2006-01-30', 'david.bowie@email.com'),
+('Emily', 'Stone', '2005-09-12', 'emily.stone@email.com'),
+('Frank', 'Ocean', '2006-04-18', 'frank.ocean@email.com'),
+('Grace', 'Kelly', '2005-06-25', 'grace.kelly@email.com'),
+('Henry', 'Ford', '2006-08-03', 'henry.ford@email.com'),
+('Iris', 'West', '2005-12-19', 'iris.west@email.com'),
+('Jack', 'Ryan', '2006-02-14', 'jack.ryan@email.com'),
+('Kate', 'Bush', '2005-05-27', 'kate.bush@email.com'),
+('Leo', 'Messi', '2006-10-09', 'leo.messi@email.com'),
+('Maya', 'Angelou', '2005-04-04', 'maya.angelou@email.com'),
+('Noah', 'Webster', '2006-03-21', 'noah.webster@email.com'),
+('Olive', 'Garden', '2005-08-16', 'olive.garden@email.com'),
+('Peter', 'Parker', '2006-06-11', 'peter.parker@email.com'),
+('Quinn', 'Fabray', '2005-10-28', 'quinn.fabray@email.com'),
+('Rachel', 'Green', '2006-05-07', 'rachel.green@email.com'),
+('Sam', 'Winchester', '2005-07-02', 'sam.winchester@email.com'),
+('Tina', 'Turner', '2006-09-13', 'tina.turner@email.com');
+
+
+INSERT INTO tblTAG (TagName, TagDescr) VALUES
+('Beginner', 'Entry level content'),
+('Intermediate', 'Medium difficulty content'),
+('Advanced', 'Expert level content'),
+('Quick Review', 'Short review sessions'),
+('Comprehensive', 'In-depth coverage'),
+('Exam Prep', 'Preparation for examinations'),
+('Practice', 'Exercise and practice material'),
+('Theory', 'Theoretical concepts'),
+('Practical', 'Hands-on applications'),
+('Visual', 'Image-heavy content'),
+('Audio', 'Sound-based learning'),
+('Interactive', 'Engaging activities'),
+('Daily', 'Daily practice material'),
+('Weekly', 'Weekly review content'),
+('Monthly', 'Monthly assessment'),
+('Core', 'Essential concepts'),
+('Supplementary', 'Additional material'),
+('Challenge', 'Difficult problems'),
+('Fun', 'Entertaining content'),
+('Critical', 'Must-know information');
+
+
+INSERT INTO tblDECK (SubjectID, OwnerID, DeckName, DeckDescr) VALUES
+(1, 1, 'Algebra Basics', 'Fundamental algebra concepts'),
+(2, 2, 'Classical Mechanics', 'Newton laws and motion'),
+(3, 3, 'Organic Chemistry', 'Carbon compounds and reactions'),
+(4, 4, 'Cell Biology', 'Structure and function of cells'),
+(5, 5, 'World War II', 'Key events of WWII'),
+(6, 6, 'World Capitals', 'Capital cities around the world'),
+(7, 7, 'Shakespeare Plays', 'Works of William Shakespeare'),
+(8, 8, 'Python Programming', 'Basics of Python language'),
+(9, 9, 'Cognitive Psychology', 'Mental processes and cognition'),
+(10, 10, 'Microeconomics', 'Supply, demand, and markets'),
+(11, 11, 'Ethics', 'Moral philosophy concepts'),
+(12, 12, 'Renaissance Art', 'Art from 14th-17th century'),
+(13, 13, 'Music Theory', 'Notes, scales, and harmony'),
+(14, 14, 'Civil Engineering', 'Infrastructure and construction'),
+(15, 15, 'Human Anatomy', 'Body systems and organs'),
+(16, 16, 'Constitutional Law', 'Principles of constitution'),
+(17, 17, 'Social Structures', 'Society organization'),
+(18, 18, 'Solar System', 'Planets and celestial bodies'),
+(19, 19, 'Grammar Rules', 'Syntax and language structure'),
+(20, 20, 'Political Systems', 'Forms of government');
+
+
+INSERT INTO tblDECK_TAG (DeckID, TagID) VALUES
+(1, 1), (2, 2), (3, 3), (4, 1), (5, 4),
+(6, 5), (7, 6), (8, 7), (9, 8), (10, 9),
+(11, 10), (12, 11), (13, 12), (14, 13), (15, 14),
+(16, 15), (17, 16), (18, 17), (19, 18), (20, 19);
+
+
+INSERT INTO tblCARD (DeckID, CardName, CardDescr) VALUES
+(1, 'Linear Equations', 'Solving equations with one variable'),
+(2, 'Newton First Law', 'Law of inertia'),
+(3, 'Alkanes', 'Saturated hydrocarbons'),
+(4, 'Mitochondria', 'Powerhouse of the cell'),
+(5, 'D-Day', 'Normandy invasion 1944'),
+(6, 'Paris', 'Capital of France'),
+(7, 'Hamlet', 'Tragedy by Shakespeare'),
+(8, 'For Loop', 'Iteration structure in Python'),
+(9, 'Memory', 'Storage and retrieval of information'),
+(10, 'Elasticity', 'Price responsiveness'),
+(11, 'Utilitarianism', 'Greatest happiness principle'),
+(12, 'Mona Lisa', 'Painting by Leonardo da Vinci'),
+(13, 'Major Scale', 'Seven-note musical scale'),
+(14, 'Bridge Design', 'Structural engineering principles'),
+(15, 'Cardiovascular System', 'Heart and blood vessels'),
+(16, 'Separation of Powers', 'Division of government branches'),
+(17, 'Social Class', 'Hierarchical distinctions'),
+(18, 'Jupiter', 'Largest planet in solar system'),
+(19, 'Subject-Verb Agreement', 'Grammar rule for sentence structure'),
+(20, 'Democracy', 'Government by the people');
+
+
+INSERT INTO tblSIDE (SideName, SideDescr) VALUES
+('Front', 'Question or prompt side'),
+('Back', 'Answer or response side'),
+('Side1', 'First side of card'),
+('Side2', 'Second side of card'),
+('Q', 'Question side'),
+('A', 'Answer side'),
+('Top', 'Top side of card'),
+('Bot', 'Bottom side of card'),
+('Left', 'Left side of card'),
+('Right', 'Right side of card'),
+('F', 'Front face'),
+('B', 'Back face'),
+('P1', 'Page one'),
+('P2', 'Page two'),
+('Start', 'Starting side'),
+('End', 'Ending side'),
+('In', 'Input side'),
+('Out', 'Output side'),
+('Ques', 'Question side'),
+('Ans', 'Answer side');
+
+
+INSERT INTO tblMEDIA (MediaName, MediaDescr) VALUES
+('Text', 'Plain text content'),
+('Image', 'Picture or graphic'),
+('Audio', 'Sound recording'),
+('Video', 'Moving visual content'),
+('Diagram', 'Visual representation'),
+('Chart', 'Data visualization'),
+('Graph', 'Mathematical plot'),
+('Formula', 'Mathematical expression'),
+('Code', 'Programming code snippet'),
+('Table', 'Tabular data'),
+('Map', 'Geographic representation'),
+('Timeline', 'Chronological representation'),
+('Infographic', 'Information graphic'),
+('Equation', 'Mathematical equation'),
+('Symbol', 'Special character or icon'),
+('Animation', 'Animated content'),
+('Illustration', 'Hand-drawn image'),
+('Photo', 'Photograph'),
+('Screenshot', 'Screen capture'),
+('Sketch', 'Quick drawing');
+
+
+INSERT INTO tblMEDIA_CARD (MediaID, CardID, SideID, Words) VALUES
+(1, 1, 1, 'What is the solution to 2x + 5 = 15?'),
+(2, 2, 1, 'State Newton First Law of Motion'),
+(3, 3, 1, 'What are alkanes?'),
+(4, 4, 1, 'What is the function of mitochondria?'),
+(5, 5, 1, 'When did D-Day occur?'),
+(6, 6, 1, 'What is the capital of France?'),
+(7, 7, 1, 'Who wrote Hamlet?'),
+(8, 8, 1, 'How do you write a for loop in Python?'),
+(9, 9, 1, 'Define memory in psychology'),
+(10, 10, 1, 'What is price elasticity?'),
+(1, 11, 2, 'Explain utilitarianism'),
+(2, 12, 2, 'Who painted the Mona Lisa?'),
+(3, 13, 2, 'What notes are in C major scale?'),
+(4, 14, 2, 'What are key bridge design principles?'),
+(5, 15, 2, 'Describe the cardiovascular system'),
+(6, 16, 2, 'Explain separation of powers'),
+(7, 17, 2, 'What is social class?'),
+(8, 18, 2, 'What makes Jupiter unique?'),
+(9, 19, 2, 'Explain subject-verb agreement'),
+(10, 20, 2, 'Define democracy');
+
+
+INSERT INTO tblASSIGNMENT (DeckID, StudentID) VALUES
+(1, 1), (2, 2), (3, 3), (4, 4), (5, 5),
+(6, 6), (7, 7), (8, 8), (9, 9), (10, 10),
+(11, 11), (12, 12), (13, 13), (14, 14), (15, 15),
+(16, 16), (17, 17), (18, 18), (19, 19), (20, 20);
+
+
+INSERT INTO tblASSIGNMENT_CARD (CardID, AssignmentID, BeginDateTime, EndDateTime) VALUES
+(1, 1, '2024-01-01 09:00:00', '2024-01-01 09:15:00'),
+(2, 2, '2024-01-02 10:00:00', '2024-01-02 10:20:00'),
+(3, 3, '2024-01-03 11:00:00', '2024-01-03 11:18:00'),
+(4, 4, '2024-01-04 12:00:00', '2024-01-04 12:25:00'),
+(5, 5, '2024-01-05 13:00:00', '2024-01-05 13:12:00'),
+(6, 6, '2024-01-06 14:00:00', '2024-01-06 14:30:00'),
+(7, 7, '2024-01-07 15:00:00', '2024-01-07 15:22:00'),
+(8, 8, '2024-01-08 16:00:00', '2024-01-08 16:17:00'),
+(9, 9, '2024-01-09 09:30:00', '2024-01-09 09:45:00'),
+(10, 10, '2024-01-10 10:30:00', '2024-01-10 10:50:00'),
+(11, 11, '2024-01-11 11:30:00', '2024-01-11 11:55:00'),
+(12, 12, '2024-01-12 12:30:00', '2024-01-12 12:48:00'),
+(13, 13, '2024-01-13 13:30:00', '2024-01-13 13:42:00'),
+(14, 14, '2024-01-14 14:30:00', '2024-01-14 15:00:00'),
+(15, 15, '2024-01-15 15:30:00', '2024-01-15 15:52:00'),
+(16, 16, '2024-01-16 16:30:00', '2024-01-16 16:45:00'),
+(17, 17, '2024-01-17 09:00:00', '2024-01-17 09:28:00'),
+(18, 18, '2024-01-18 10:00:00', '2024-01-18 10:35:00'),
+(19, 19, '2024-01-19 11:00:00', '2024-01-19 11:20:00'),
+(20, 20, '2024-01-20 12:00:00', '2024-01-20 12:40:00');
+
+
+INSERT INTO tblNOTE_TYPE (NoteTypeName, NoteTypeDescr) VALUES
+('Personal', 'Personal annotations'),
+('Study Tip', 'Learning suggestions'),
+('Mnemonic', 'Memory aid'),
+('Example', 'Additional examples'),
+('Clarification', 'Explanation of difficult concept'),
+('Reference', 'Related material'),
+('Question', 'Follow-up question'),
+('Summary', 'Brief overview'),
+('Insight', 'Key understanding'),
+('Warning', 'Common mistake alert'),
+('Reminder', 'Important point to remember'),
+('Connection', 'Link to other concepts'),
+('Application', 'Real-world use'),
+('Etymology', 'Word origin'),
+('History', 'Historical context'),
+('Analogy', 'Comparison to aid understanding'),
+('Formula', 'Mathematical or scientific formula'),
+('Diagram', 'Visual representation'),
+('Quote', 'Relevant quotation'),
+('Fact', 'Additional factual information');
+
+INSERT INTO tblNOTE (MediaCardID, NoteTypeID, NoteDate) VALUES
+(1, 1, '2024-01-01 09:05:00'),
+(2, 2, '2024-01-02 10:10:00'),
+(3, 3, '2024-01-03 11:08:00'),
+(4, 4, '2024-01-04 12:15:00'),
+(5, 5, '2024-01-05 13:06:00'),
+(6, 6, '2024-01-06 14:20:00'),
+(7, 7, '2024-01-07 15:11:00'),
+(8, 8, '2024-01-08 16:09:00'),
+(9, 9, '2024-01-09 09:38:00'),
+(10, 10, '2024-01-10 10:42:00'),
+(11, 11, '2024-01-11 11:45:00'),
+(12, 12, '2024-01-12 12:38:00'),
+(13, 13, '2024-01-13 13:36:00'),
+(14, 14, '2024-01-14 14:48:00'),
+(15, 15, '2024-01-15 15:40:00'),
+(16, 16, '2024-01-16 16:38:00'),
+(17, 17, '2024-01-17 09:18:00'),
+(18, 18, '2024-01-18 10:22:00'),
+(19, 19, '2024-01-19 11:12:00'),
+(20, 20, '2024-01-20 12:28:00');
+
+
+INSERT INTO tblRATING (RatingName) VALUES
+('Again'), ('Hard'), ('Good'), ('Easy'),
+('Forgot'), ('Difficult'), ('Okay'), ('Simple'),
+('Failed'), ('Struggling'), ('Satisfactory'), ('Excellent'),
+('Poor'), ('Challenging'), ('Fair'), ('Perfect'),
+('Missed'), ('Tough'), ('Acceptable'), ('Outstanding');
+
+
+INSERT INTO tblINTERVAL (DueDate) VALUES
+('2024-01-02 09:00:00'), ('2024-01-03 10:00:00'),
+('2024-01-04 11:00:00'), ('2024-01-05 12:00:00'),
+('2024-01-06 13:00:00'), ('2024-01-07 14:00:00'),
+('2024-01-08 15:00:00'), ('2024-01-09 16:00:00'),
+('2024-01-10 09:30:00'), ('2024-01-11 10:30:00'),
+('2024-01-12 11:30:00'), ('2024-01-13 12:30:00'),
+('2024-01-14 13:30:00'), ('2024-01-15 14:30:00'),
+('2024-01-16 15:30:00'), ('2024-01-17 16:30:00'),
+('2024-01-18 09:00:00'), ('2024-01-19 10:00:00'),
+('2024-01-20 11:00:00'), ('2024-01-21 12:00:00');
+
+
+INSERT INTO tblREVIEW (AssignmentCardID, RatingID, IntervalID, ReviewDate) VALUES
+(1, 3, 1, '2024-01-01 09:15:00'),
+(2, 2, 2, '2024-01-02 10:20:00'),
+(3, 4, 3, '2024-01-03 11:18:00'),
+(4, 3, 4, '2024-01-04 12:25:00'),
+(5, 1, 5, '2024-01-05 13:12:00'),
+(6, 4, 6, '2024-01-06 14:30:00'),
+(7, 3, 7, '2024-01-07 15:22:00'),
+(8, 2, 8, '2024-01-08 16:17:00'),
+(9, 3, 9, '2024-01-09 09:45:00'),
+(10, 4, 10, '2024-01-10 10:50:00'),
+(11, 2, 11, '2024-01-11 11:55:00'),
+(12, 3, 12, '2024-01-12 12:48:00'),
+(13, 4, 13, '2024-01-13 13:42:00'),
+(14, 1, 14, '2024-01-14 15:00:00'),
+(15, 3, 15, '2024-01-15 15:52:00'),
+(16, 4, 16, '2024-01-16 16:45:00'),
+(17, 2, 17, '2024-01-17 09:28:00'),
+(18, 3, 18, '2024-01-18 10:35:00'),
+(19, 4, 19, '2024-01-19 11:20:00'),
+(20, 3, 20, '2024-01-20 12:40:00');
