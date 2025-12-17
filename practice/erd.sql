@@ -40,12 +40,14 @@ TagDescr VARCHAR(500)
 
 
 
-CREATE TABLE tblASSIGNMENT_CARD (
-AssignmentCardID INT IDENTITY(1, 1) PRIMARY KEY,
-CardID           INT,
-AssignmentID     INT,
-BeginDateTime    DATETIME,    
-EndDateTime      DATETIME,     
+CREATE TABLE tblASSIGNMENT_CARD
+(
+    AssignmentCardID INT IDENTITY (1, 1) PRIMARY KEY,
+    CardID           INT,
+    AssignmentID     INT,
+    BeginDateTime    DATETIME,
+    EndDateTime      DATETIME,
+)
 
 CREATE TABLE tblASSIGNMENT (
 AssignmentID INT IDENTITY(1, 1) PRIMARY KEY,
@@ -88,22 +90,25 @@ NoteTypeName  VARCHAR(50),
 NoteTypeDescr VARCHAR(500) NULL,
 )
 
-CREATE TABLE tblREVIEW (
-ReviewID         INT IDENTITY(1, 1) PRIMARY KEY,
-AssignmentCardID INT,
-RatingID         INT,
-IntervalID       INT,
-ReviewDate       DATETIME,    
+CREATE TABLE tblREVIEW
+(
+    ReviewID         INT IDENTITY (1, 1) PRIMARY KEY,
+    AssignmentCardID INT,
+    RatingID         INT,
+    IntervalID       INT,
+    ReviewDate       DATETIME,
+)
 
 CREATE TABLE tblRATING (
 RatingID   INT IDENTITY(1, 1) PRIMARY KEY,
 RatingName VARCHAR(50) NULL,
 )
 
-CREATE TABLE tblINTERVAL (
-IntervalID INT IDENTITY(1, 1) PRIMARY KEY,
-DueDate    DATETIME NOT NULL, 
-
+CREATE TABLE tblINTERVAL
+(
+    IntervalID INT IDENTITY (1, 1) PRIMARY KEY,
+    DueDate    DATETIME NOT NULL,
+)
 
 -- ALTER TABLES (Add Foreign Keys)
 
