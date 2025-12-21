@@ -1,4 +1,4 @@
-NSERT INTO tblSUBJECT (SubjectName, SubjectDescr) VALUES
+iNSERT INTO tblSUBJECT (SubjectName, SubjectDescr) VALUES
 ('Mathematics', 'Study of numbers, quantity, and space'),
 ('Physics', 'Science of matter, energy, and their interactions'),
 ('Chemistry', 'Study of substances and their properties'),
@@ -119,51 +119,30 @@ INSERT INTO tblDECK_TAG (DeckID, TagID) VALUES
 (11, 10), (12, 11), (13, 12), (14, 13), (15, 14),
 (16, 15), (17, 16), (18, 17), (19, 18), (20, 19);
 
+INSERT INTO tblCARD (DeckID, CardFront, CardBack)
+VALUES 
+(1, 'What is SQL?', 'SQL stands for Structured Query Language and is used to interact with relational databases.'),
+(1, 'What is a primary key?', 'A primary key is a unique identifier for a record in a table, ensuring that no two rows have the same value for the primary key column.'),
+(2, 'Explain normalization in databases.', 'Normalization is the process of organizing the attributes and tables of a relational database to reduce redundancy and dependency.'),
+(2, 'What is a foreign key?', 'A foreign key is a field in one table that uniquely identifies a row of another table.'),
+(3, 'What is the purpose of a JOIN in SQL?', 'A JOIN is used to combine rows from two or more tables based on a related column between them.'),
+(3, 'What is a LEFT JOIN?', 'A LEFT JOIN returns all records from the left table and the matched records from the right table. If there is no match, NULL values are returned for columns from the right table.'),
+(4, 'What does the term "SELECT" do in SQL?', 'The SELECT statement is used to query the database and retrieve data from one or more tables.'),
+(4, 'What is the difference between WHERE and HAVING in SQL?', 'WHERE is used to filter records before any groupings are made, whereas HAVING is used to filter records after groupings are made.'),
+(5, 'What is an index in a database?', 'An index is a database object used to speed up the retrieval of rows from a table.'),
+(5, 'What is a subquery in SQL?', 'A subquery is a query embedded within another query and is used to retrieve data that will be used by the main query.'),
+(6, 'What is an aggregate function in SQL?', 'An aggregate function performs a calculation on a set of values and returns a single value, such as COUNT, SUM, AVG, etc.'),
+(6, 'Explain the difference between UNION and UNION ALL.', 'UNION combines the results of two queries and removes duplicate rows, while UNION ALL combines the results without removing duplicates.'),
+(7, 'What is the purpose of the GROUP BY clause in SQL?', 'The GROUP BY clause groups rows that have the same values into summary rows, often used with aggregate functions.'),
+(7, 'What is the difference between an INNER JOIN and an OUTER JOIN?', 'An INNER JOIN returns rows when there is a match in both tables, while an OUTER JOIN returns all rows from one table and the matched rows from the other table.'),
+(8, 'What is a view in SQL?', 'A view is a virtual table based on the result set of a SQL query, which can simplify complex queries.'),
+(8, 'What does the term "ACID" stand for in databases?', 'ACID stands for Atomicity, Consistency, Isolation, and Durability, which are the properties that guarantee reliable database transactions.'),
+(9, 'What is a database schema?', 'A database schema is the structure that defines the organization of data within a database, including tables, views, and relationships.'),
+(9, 'What is normalization in database design?', 'Normalization is the process of removing redundant data and ensuring that data dependencies are logical in a database design.'),
+(10, 'What is SQL injection?', 'SQL injection is a code injection technique that exploits vulnerabilities in a web application by inserting malicious SQL statements.'),
+(10, 'What is a transaction in SQL?', 'A transaction is a sequence of operations performed as a single unit, ensuring data integrity by adhering to ACID properties.');
 
-INSERT INTO tblCARD (DeckID, CardName, CardDescr) VALUES
-(1, 'Linear Equations', 'Solving equations with one variable'),
-(2, 'Newton First Law', 'Law of inertia'),
-(3, 'Alkanes', 'Saturated hydrocarbons'),
-(4, 'Mitochondria', 'Powerhouse of the cell'),
-(5, 'D-Day', 'Normandy invasion 1944'),
-(6, 'Paris', 'Capital of France'),
-(7, 'Hamlet', 'Tragedy by Shakespeare'),
-(8, 'For Loop', 'Iteration structure in Python'),
-(9, 'Memory', 'Storage and retrieval of information'),
-(10, 'Elasticity', 'Price responsiveness'),
-(11, 'Utilitarianism', 'Greatest happiness principle'),
-(12, 'Mona Lisa', 'Painting by Leonardo da Vinci'),
-(13, 'Major Scale', 'Seven-note musical scale'),
-(14, 'Bridge Design', 'Structural engineering principles'),
-(15, 'Cardiovascular System', 'Heart and blood vessels'),
-(16, 'Separation of Powers', 'Division of government branches'),
-(17, 'Social Class', 'Hierarchical distinctions'),
-(18, 'Jupiter', 'Largest planet in solar system'),
-(19, 'Subject-Verb Agreement', 'Grammar rule for sentence structure'),
-(20, 'Democracy', 'Government by the people');
 
-
-INSERT INTO tblSIDE (SideName, SideDescr) VALUES
-('Front', 'Question or prompt side'),
-('Back', 'Answer or response side'),
-('Side1', 'First side of card'),
-('Side2', 'Second side of card'),
-('Q', 'Question side'),
-('A', 'Answer side'),
-('Top', 'Top side of card'),
-('Bot', 'Bottom side of card'),
-('Left', 'Left side of card'),
-('Right', 'Right side of card'),
-('F', 'Front face'),
-('B', 'Back face'),
-('P1', 'Page one'),
-('P2', 'Page two'),
-('Start', 'Starting side'),
-('End', 'Ending side'),
-('In', 'Input side'),
-('Out', 'Output side'),
-('Ques', 'Question side'),
-('Ans', 'Answer side');
 
 
 INSERT INTO tblMEDIA (MediaName, MediaDescr) VALUES

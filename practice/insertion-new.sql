@@ -299,7 +299,7 @@ VALUES
 );
 
 -- Insert 20 CARDS using subqueries
-INSERT INTO tblCARD (DeckID, CardName, CardDescr)
+INSERT INTO tblCARD (DeckID, CardFront, CardBack)
 VALUES
 (
     (SELECT DeckID FROM tblDECK WHERE DeckName = 'Algebra Basics'),
@@ -402,28 +402,7 @@ VALUES
     'Government by the people'
 );
 
--- Insert 20 SIDES
-INSERT INTO tblSIDE (SideName, SideDescr) VALUES
-('Front', 'Question or prompt side'),
-('Back', 'Answer or response side'),
-('Side1', 'First side of card'),
-('Side2', 'Second side of card'),
-('Q', 'Question side'),
-('A', 'Answer side'),
-('Top', 'Top side of card'),
-('Bot', 'Bottom side of card'),
-('Left', 'Left side of card'),
-('Right', 'Right side of card'),
-('F', 'Front face'),
-('B', 'Back face'),
-('P1', 'Page one'),
-('P2', 'Page two'),
-('Start', 'Starting side'),
-('End', 'Ending side'),
-('In', 'Input side'),
-('Out', 'Output side'),
-('Ques', 'Question side'),
-('Ans', 'Answer side');
+
 
 -- Insert 20 MEDIA types
 INSERT INTO tblMEDIA (MediaName, MediaDescr) VALUES
@@ -447,131 +426,109 @@ INSERT INTO tblMEDIA (MediaName, MediaDescr) VALUES
 ('Photo', 'Photograph'),
 ('Screenshot', 'Screen capture'),
 ('Sketch', 'Quick drawing');
-
 -- Insert 20 MEDIA_CARD relationships using subqueries
-INSERT INTO tblMEDIA_CARD (MediaID, CardID, SideID, Words)
+INSERT INTO tblMEDIA_CARD (MediaID, CardID, Words)
 VALUES
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Text'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Linear Equations'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Front'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Linear Equations'),
     'What is the solution to 2x + 5 = 15?'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Image'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Newton First Law'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Front'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Newton First Law'),
     'State Newton First Law of Motion'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Audio'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Alkanes'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Front'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Alkanes'),
     'What are alkanes?'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Video'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Mitochondria'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Front'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Mitochondria'),
     'What is the function of mitochondria?'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Diagram'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'D-Day'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Front'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'D-Day'),
     'When did D-Day occur?'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Chart'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Paris'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Front'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Paris'),
     'What is the capital of France?'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Graph'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Hamlet'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Front'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Hamlet'),
     'Who wrote Hamlet?'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Formula'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'For Loop'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Front'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'For Loop'),
     'How do you write a for loop in Python?'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Code'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Memory'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Front'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Memory'),
     'Define memory in psychology'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Table'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Elasticity'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Front'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Elasticity'),
     'What is price elasticity?'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Text'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Utilitarianism'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Back'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Utilitarianism'),
     'Explain utilitarianism'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Image'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Mona Lisa'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Back'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Mona Lisa'),
     'Who painted the Mona Lisa?'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Audio'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Major Scale'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Back'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Major Scale'),
     'What notes are in C major scale?'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Video'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Bridge Design'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Back'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Bridge Design'),
     'What are key bridge design principles?'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Diagram'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Cardiovascular System'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Back'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Cardiovascular System'),
     'Describe the cardiovascular system'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Chart'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Separation of Powers'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Back'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Separation of Powers'),
     'Explain separation of powers'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Graph'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Social Class'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Back'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Social Class'),
     'What is social class?'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Formula'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Jupiter'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Back'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Jupiter'),
     'What makes Jupiter unique?'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Code'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Subject-Verb Agreement'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Back'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Subject-Verb Agreement'),
     'Explain subject-verb agreement'
 ),
 (
     (SELECT MediaID FROM tblMEDIA WHERE MediaName = 'Table'),
-    (SELECT CardID FROM tblCARD WHERE CardName = 'Democracy'),
-    (SELECT SideID FROM tblSIDE WHERE SideName = 'Back'),
+    (SELECT CardID FROM tblCARD WHERE CardFront = 'Democracy'),
     'Define democracy'
 );
-
 -- Insert 20 ASSIGNMENTS using subqueries
 INSERT INTO tblASSIGNMENT (DeckID, StudentID)
 VALUES
@@ -629,4 +586,29 @@ VALUES
 ),
 (
     (SELECT DeckID FROM tblDECK WHERE DeckName = 'Civil Engineering'),
-    (SELECT StudentID FROM tblSTUDENT WHERE StudentFname = 'Noah' AND StudentLname
+    (SELECT StudentID FROM tblSTUDENT WHERE StudentFname = 'Noah' AND StudentLname = 'Webster')
+),
+(
+    (SELECT DeckID FROM tblDECK WHERE DeckName = 'Law'),
+    (SELECT StudentID FROM tblSTUDENT WHERE StudentFname = 'Olive' AND StudentLname = 'Garden')
+),
+(
+    (SELECT DeckID FROM tblDECK WHERE DeckName = 'Sociology'),
+    (SELECT StudentID FROM tblSTUDENT WHERE StudentFname = 'Peter' AND StudentLname = 'Parker')
+),
+(
+    (SELECT DeckID FROM tblDECK WHERE DeckName = 'Astronomy'),
+    (SELECT StudentID FROM tblSTUDENT WHERE StudentFname = 'Quinn' AND StudentLname = 'Fabray')
+),
+(
+    (SELECT DeckID FROM tblDECK WHERE DeckName = 'Linguistics'),
+    (SELECT StudentID FROM tblSTUDENT WHERE StudentFname = 'Rachel' AND StudentLname = 'Green')
+),
+(
+    (SELECT DeckID FROM tblDECK WHERE DeckName = 'Political Science'),
+    (SELECT StudentID FROM tblSTUDENT WHERE StudentFname = 'Sam' AND StudentLname = 'Winchester')
+),
+(
+    (SELECT DeckID FROM tblDECK WHERE DeckName = 'Solar System'),
+    (SELECT StudentID FROM tblSTUDENT WHERE StudentFname = 'Tina' AND StudentLname = 'Turner')
+);

@@ -1,65 +1,67 @@
------- tblCARD --------------
+-- Insert cards using the ADD_Card_tblCARD stored procedure
 EXEC ADD_Card_tblCARD
-	@DeckID = 1,
-	@CardName = 'Store Procedure',
-	@CardDescr = 'A stored procedure in SQL is a precompiled collection of SQL statements and optional control-of-flow logic (like loops and conditional statements) that is stored in the database management system as a named object'
+    @DeckID = 1,
+    @CardFront = 'Store Procedure',
+    @CardBack = 'A stored procedure in SQL is a precompiled collection of SQL statements and optional control-of-flow logic (like loops and conditional statements) that is stored in the database management system as a named object';
 
 EXEC ADD_Card_tblCARD
     @DeckID = 1,
-    @CardName = 'SQL Basics',
-    @CardDescr = 'Introduction to SQL syntax and queries';
+    @CardFront = 'SQL Basics',
+    @CardBack = 'Introduction to SQL syntax and queries';
 
 EXEC ADD_Card_tblCARD
     @DeckID = 2,
-    @CardName = 'Normalization',
-    @CardDescr = 'Normalization is the process of organizing data to avoid redundancy and ensure data integrity in a relational database';
+    @CardFront = 'Normalization',
+    @CardBack = 'Normalization is the process of organizing data to avoid redundancy and ensure data integrity in a relational database';
 
 EXEC ADD_Card_tblCARD
     @DeckID = 3,
-    @CardName = 'Encapsulation',
-    @CardDescr = 'Encapsulation is one of the four fundamental OOP concepts, where data and methods are bundled together inside a class';
+    @CardFront = 'Encapsulation',
+    @CardBack = 'Encapsulation is one of the four fundamental OOP concepts, where data and methods are bundled together inside a class';
 
 EXEC ADD_Card_tblCARD
     @DeckID = 4,
-    @CardName = 'Binary Search Tree',
-    @CardDescr = 'A binary search tree is a data structure in which each node has at most two children, and for each node, the left child?s value is less than the parent node?s value, and the right child?s value is greater';
+    @CardFront = 'Binary Search Tree',
+    @CardBack = 'A binary search tree is a data structure in which each node has at most two children, and for each node, the left child?s value is less than the parent node?s value, and the right child?s value is greater';
 
 EXEC ADD_Card_tblCARD
     @DeckID = 5,
-    @CardName = 'Dijkstra?s Algorithm',
-    @CardDescr = 'Dijkstra?s algorithm is a graph search algorithm used to find the shortest path between nodes in a graph';
+    @CardFront = 'Dijkstra?s Algorithm',
+    @CardBack = 'Dijkstra?s algorithm is a graph search algorithm used to find the shortest path between nodes in a graph';
 
 EXEC ADD_Card_tblCARD
     @DeckID = 1,
-    @CardName = 'INNER JOIN',
-    @CardDescr = 'An INNER JOIN returns records that have matching values in both tables involved in the join';
+    @CardFront = 'INNER JOIN',
+    @CardBack = 'An INNER JOIN returns records that have matching values in both tables involved in the join';
 
 EXEC ADD_Card_tblCARD
     @DeckID = 2,
-    @CardName = 'RDBMS',
-    @CardDescr = 'A Relational Database Management System (RDBMS) is a type of database management system (DBMS) that stores data in tables that are related to each other through foreign keys';
+    @CardFront = 'RDBMS',
+    @CardBack = 'A Relational Database Management System (RDBMS) is a type of database management system (DBMS) that stores data in tables that are related to each other through foreign keys';
 
 EXEC ADD_Card_tblCARD
     @DeckID = 3,
-    @CardName = 'PRIMARY KEY',
-    @CardDescr = 'A PRIMARY KEY is a column or a set of columns in a table that uniquely identifies each row in the table';
+    @CardFront = 'PRIMARY KEY',
+    @CardBack = 'A PRIMARY KEY is a column or a set of columns in a table that uniquely identifies each row in the table';
 
 EXEC ADD_Card_tblCARD
     @DeckID = 4,
-    @CardName = 'Data Integrity',
-    @CardDescr = 'Data integrity refers to the accuracy, consistency, and reliability of data stored in a database';
+    @CardFront = 'Data Integrity',
+    @CardBack = 'Data integrity refers to the accuracy, consistency, and reliability of data stored in a database';
 
 EXEC ADD_Card_tblCARD
     @DeckID = 5,
-    @CardName = 'Stored Procedure',
-    @CardDescr = 'A stored procedure in SQL is a precompiled collection of SQL statements and optional control-of-flow logic (like loops and conditional statements) that is stored in the database management system as a named object';
+    @CardFront = 'Stored Procedure',
+    @CardBack = 'A stored procedure in SQL is a precompiled collection of SQL statements and optional control-of-flow logic (like loops and conditional statements) that is stored in the database management system as a named object';
 
------------- tblASSIGNMENT_CARD -------------
+
+
+-- Assign cards to students using the AssingCardToStudent stored procedure
 EXEC AssingCardToStudent
-    @CardID = 1,
-    @AssignmentID = 1,
+    @CardID = 1, -- Ensure CardID exists in tblCARD
+    @AssignmentID = 1, -- Ensure AssignmentID exists in tblASSIGNMENT
     @BeginDateTime = '2025-11-20 16:00:00',
-	@EndDateTime = '2025-11-20 17:40:00';
+    @EndDateTime = '2025-11-20 17:40:00';
 
 EXEC AssingCardToStudent
     @CardID = 1,
@@ -121,59 +123,7 @@ EXEC AssingCardToStudent
     @BeginDateTime = '2025-12-25 12:00:00',
     @EndDateTime = '2025-12-25 13:30:00';
 
------------- tblMEDIA_CARD -------------
 
-EXEC InsertMediaCard 
-    @MediaName = 'Text', 
-    @CardName = 'Store Procedure', 
-    @Words = 'What is a stored procedure in SQL?';
 
-EXEC InsertMediaCard 
-    @MediaName = 'Text', 
-    @CardName = 'SQL Basics', 
-    @Words = 'What are the fundamental concepts of SQL?';
 
-EXEC InsertMediaCard 
-    @MediaName = 'Text', 
-    @CardName = 'Normalization', 
-    @Words = 'What is normalization in database design, and why is it important?';
 
-EXEC InsertMediaCard 
-    @MediaName = 'Text', 
-    @CardName = 'Encapsulation', 
-    @Words = 'What does encapsulation mean in object-oriented programming?';
-
-EXEC InsertMediaCard 
-    @MediaName = 'Diagram', 
-    @CardName = 'Binary Search Tree', 
-    @Words = 'What is a binary search tree, and how does it work?';
-
-EXEC InsertMediaCard 
-    @MediaName = 'Diagram', 
-    @CardName = 'Dijkstra’s Algorithm', 
-    @Words = 'How does Dijkstra’s algorithm find the shortest path in a graph?';
-
-EXEC InsertMediaCard 
-    @MediaName = 'Code', 
-    @CardName = 'INNER JOIN', 
-    @Words = 'What does the SQL INNER JOIN operation do, and how is it used?';
-
-EXEC InsertMediaCard 
-    @MediaName = 'Text', 
-    @CardName = 'RDBMS', 
-    @Words = 'What is an RDBMS (Relational Database Management System), and what are its key features?';
-
-EXEC InsertMediaCard 
-    @MediaName = 'Text', 
-    @CardName = 'PRIMARY KEY', 
-    @Words = 'What is a primary key in SQL, and why is it important for database integrity?';
-
-EXEC InsertMediaCard 
-    @MediaName = 'Text', 
-    @CardName = 'Data Integrity', 
-    @Words = 'What is data integrity in the context of databases?';
-
-EXEC InsertMediaCard 
-    @MediaName = 'Text', 
-    @CardName = 'Stored Procedure', 
-    @Words = 'What are the advantages of using stored procedures in SQL?';

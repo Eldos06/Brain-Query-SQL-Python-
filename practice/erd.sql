@@ -1,8 +1,11 @@
+
+
+
 CREATE TABLE tblCARD (
 CardID    INT IDENTITY(1, 1) PRIMARY KEY,
 DeckID    INT,
-CardName  VARCHAR(50)  NOT NULL,
-CardDescr VARCHAR(500) NULL
+CardFront  VARCHAR(500)  NOT NULL,
+CardBack VARCHAR(500) NOT NULL
 )
 
 CREATE TABLE tblDECK (
@@ -68,7 +71,7 @@ MediaCardID INT IDENTITY(1, 1) PRIMARY KEY,
 MediaID     INT,
 CardID      INT,
 SideID      INT,
-Words       TEXT NULL
+Words       VARCHAR(200) NULL
 )
 
 CREATE TABLE tblMEDIA (

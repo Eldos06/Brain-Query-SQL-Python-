@@ -1,13 +1,13 @@
 CREATE OR ALTER PROCEDURE ADD_Card_tblCARD
           @DeckID INT,
-		  @CardName VARCHAR(50),
-		  @CardDescr VARCHAR(500)
+		  @CardFront VARCHAR(500),
+		  @CardBack VARCHAR(500)
 	AS
 	BEGIN 
 		BEGIN TRY
 			BEGIN TRAN;
-				INSERT INTO tblCARD(DeckID, CardName, CardDescr)
-				VALUES (@DeckID, @CardName, @CardDescr)
+				INSERT INTO tblCARD(DeckID, CardFront, CardBack)
+				VALUES (@DeckID, @CardFront, @CardBack)
 
 				COMMIT TRAN
 		END TRY
