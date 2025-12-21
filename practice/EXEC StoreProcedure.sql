@@ -121,3 +121,59 @@ EXEC AssingCardToStudent
     @BeginDateTime = '2025-12-25 12:00:00',
     @EndDateTime = '2025-12-25 13:30:00';
 
+------------ tblMEDIA_CARD -------------
+
+EXEC InsertMediaCard 
+    @MediaName = 'Text', 
+    @CardName = 'Store Procedure', 
+    @Words = 'What is a stored procedure in SQL?';
+
+EXEC InsertMediaCard 
+    @MediaName = 'Text', 
+    @CardName = 'SQL Basics', 
+    @Words = 'What are the fundamental concepts of SQL?';
+
+EXEC InsertMediaCard 
+    @MediaName = 'Text', 
+    @CardName = 'Normalization', 
+    @Words = 'What is normalization in database design, and why is it important?';
+
+EXEC InsertMediaCard 
+    @MediaName = 'Text', 
+    @CardName = 'Encapsulation', 
+    @Words = 'What does encapsulation mean in object-oriented programming?';
+
+EXEC InsertMediaCard 
+    @MediaName = 'Diagram', 
+    @CardName = 'Binary Search Tree', 
+    @Words = 'What is a binary search tree, and how does it work?';
+
+EXEC InsertMediaCard 
+    @MediaName = 'Diagram', 
+    @CardName = 'Dijkstra’s Algorithm', 
+    @Words = 'How does Dijkstra’s algorithm find the shortest path in a graph?';
+
+EXEC InsertMediaCard 
+    @MediaName = 'Code', 
+    @CardName = 'INNER JOIN', 
+    @Words = 'What does the SQL INNER JOIN operation do, and how is it used?';
+
+EXEC InsertMediaCard 
+    @MediaName = 'Text', 
+    @CardName = 'RDBMS', 
+    @Words = 'What is an RDBMS (Relational Database Management System), and what are its key features?';
+
+EXEC InsertMediaCard 
+    @MediaName = 'Text', 
+    @CardName = 'PRIMARY KEY', 
+    @Words = 'What is a primary key in SQL, and why is it important for database integrity?';
+
+EXEC InsertMediaCard 
+    @MediaName = 'Text', 
+    @CardName = 'Data Integrity', 
+    @Words = 'What is data integrity in the context of databases?';
+
+EXEC InsertMediaCard 
+    @MediaName = 'Text', 
+    @CardName = 'Stored Procedure', 
+    @Words = 'What are the advantages of using stored procedures in SQL?';
