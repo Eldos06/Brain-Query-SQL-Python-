@@ -192,3 +192,23 @@ IF @@ERROR <> 0
 ELSE
 	COMMIT TRANSACTION T1;
 GO
+
+
+
+CREATE OR ALTER PROCEDURE GetStudentAssignmentID
+	@S_email VARCHAR(50),
+	@AssignmetnID INT OUTPUT
+	AS
+	SET @AssignmetnID = (SELECT AssignmentID FROM tblASSIGNMENT A
+						JOIN tblSTUDENT S ON A.StudentID = S.StudentID
+						WHERE S.email = @S_email)
+	IF @AssignmetnID IS NULL
+			PRINT NULL;
+		
+
+
+
+
+
+			
+							
