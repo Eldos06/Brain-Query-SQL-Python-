@@ -70,7 +70,6 @@ CREATE TABLE tblMEDIA_CARD (
 MediaCardID INT IDENTITY(1, 1) PRIMARY KEY,
 MediaID     INT,
 CardID      INT,
-SideID      INT,
 Words       VARCHAR(200) NULL
 )
 
@@ -178,9 +177,6 @@ ADD CONSTRAINT FK_tblREVIEW_IntervalID
   CONSTRAINT FK_ASSIGNMENTCARD_AssignmentCardID
     FOREIGN KEY (AssignmentCardID)
     REFERENCES tblASSIGNMENT_CARD(AssignmentCardID);
-
-
---- business rule ------
 
 ALTER TABLE tblASSIGNMENT
 ADD CONSTRAINT FK_ASSIGNMENT_StudentID
