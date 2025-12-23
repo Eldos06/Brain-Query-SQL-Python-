@@ -3,7 +3,7 @@
 
 CREATE TABLE tblCARD (
 CardID    INT IDENTITY(1, 1) PRIMARY KEY,
-DeckID    INT,
+DeckID    INT,  
 CardFront  VARCHAR(500)  NOT NULL,
 CardBack VARCHAR(500) NOT NULL
 )

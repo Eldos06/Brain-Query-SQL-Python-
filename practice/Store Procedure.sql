@@ -19,6 +19,9 @@ CREATE OR ALTER PROCEDURE ADD_Card_tblCARD
 GO
 
 
+
+
+
 CREATE OR ALTER PROCEDURE AssingCardToStudent
     @CardID INT,
     @AssignmentID INT,
@@ -206,9 +209,104 @@ CREATE OR ALTER PROCEDURE GetStudentAssignmentID
 			PRINT NULL;
 		
 
+-- Научиться передавать параметры и вставлять данные.
+
+CREATE  PROCEDURE INSERT_newStudent
+	@Fname VARCHAR(50),
+	@Lname VARCHAR(50),
+	@BD    DATETIME,
+	@Email VARCHAR(50)
+	AS
+		BEGIN
+			INSERT INTO tblSTUDENT(StudentFname, StudentLname, BirthDate, email)
+			VALUES (@Fname, @Lname, @BD, @Email)
+		END
+	
+SELECT * FROM tblSTUDENT
+
+EXEC INSERT_newStudent
+@Fname = 'Yeldos',
+@Lname = 'Suleimonov',
+@BD    = '2006-10-26 20:23:56',
+@Email = '240116042@sdu.edu.kz'
+
+CREATE OR ALTER PROCEDURE GetInfoStudent
+	@email VARCHAR(50)
+	AS
+	BEGIN
+		SELECT * FROM tblSTUDENT WHERE email = @email
+	END
+GO
+
+EXEC GetInfoStudent
+@email = '240116042@sdu.edu.kz'
+
+CREATE OR ALTER PROCEDURE sp_Get_SubjectID
+    @SubjectName VARCHAR(50),
+    @SubjectID   INT OUTPUT
+AS
+BEGIN
+    SET @SubjectID =
+    (
+        SELECT SubjectID
+        FROM tblSUBJECT
+        WHERE SubjectName = @SubjectName
+    );
+END
+GO
+
+
+CREATE OR ALTER PROCEDURE sp_Insert_Deck
+    @DeckName    VARCHAR(100),
+    @DeckDescr   VARCHAR(500),
+    @SubjectName VARCHAR(50),
+    @OwnerID     INT
+AS
+BEGIN
+    DECLARE @SubjectID INT;
+
+    -- Получаем SubjectID через nested procedure
+    EXEC sp_Get_SubjectID
+        @SubjectName = @SubjectName,
+        @SubjectID   = @SubjectID OUTPUT;
+
+    -- Бизнес-правило: Subject обязан существовать
+    IF @SubjectID IS NULL
+    BEGIN
+        THROW 50001, 'Subject does not exist. Check SubjectName.', 1;
+    END
+
+    BEGIN TRAN;
+
+        INSERT INTO tblDECK (DeckName, DeckDescr, SubjectID, OwnerID)
+        VALUES (@DeckName, @DeckDescr, @SubjectID, @OwnerID);
+
+        IF @@ERROR <> 0
+        BEGIN
+            ROLLBACK;
+            THROW 50002, 'Insert into tblDECK failed.', 1;
+        END
+
+    COMMIT;
+END
+GO
+
+
+DECLARE @SID INT;
+
+EXEC sp_Get_SubjectID
+    @SubjectName = 'Math',
+    @SubjectID   = @SID OUTPUT;
+
+SELECT @SID AS SubjectID;
+
+
+EXEC sp_Insert_Deck
+    @DeckName    = 'Algebra Basics',
+    @DeckDescr   = 'Linear equations and formulas',
+    @SubjectName = 'Math',
+    @OwnerID     = 1;
 
 
 
 
-			
-							
